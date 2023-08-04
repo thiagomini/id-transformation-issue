@@ -11,29 +11,19 @@ Steps to run this project:
 
 ```mermaid
 graph LR
-A(User Object)
-B(User Repository)
-C(Address Object)
-D(App Data Source)
-E["QueryFailedError: invalid input syntax for type integer: value:18"]
-F(User Schema)
-G(Address Schema)
-H(idTransformer)
-I[Save User Entity]
-J[Save Address Entity]
-K[Typeorm]
-A -- "Define new" --> C
-A -- "Set ID" --> C
-A -- "Add Address" --> C
-B -- "Create Repository" --> A
-B --> K
-D --> B
-D -- "Get Repository" --> B
-F -- "Define columns and relations" --> H
-G -- "Define columns and relations" --> H
-I --> B
-J --> K
-K -- "Cascade save operation" --> E
+  A(User Object)
+  B(User Repository)
+  C(Address Object)
+  E["QueryFailedError: invalid input syntax for type integer: value:18"]
+  I[Save User Entity]
+  J[Save Address Entity]
+  K[Typeorm]
+  A -- "Define new" --> C
+  A -- "Add Address" --> C
+  B -- "Create Repository" --> A
+  I --> B
+  J --> K
+  K -- "Cascade save operation" --> E
 ```
 
 
