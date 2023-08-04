@@ -25,7 +25,6 @@ export const UserSchema = new EntitySchema<User>({
       cascade: true,
       target: 'Address',
       inverseSide: 'user',
-      
     }
   }
 })
