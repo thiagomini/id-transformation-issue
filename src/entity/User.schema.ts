@@ -1,5 +1,6 @@
 import { EntitySchema } from "typeorm";
 import { User } from "./User";
+import { idTransformer } from "./id.transformer";
 
 export const UserSchema = new EntitySchema<User>({
   name: 'User',
@@ -10,6 +11,7 @@ export const UserSchema = new EntitySchema<User>({
       type: Number,
       primary: true,
       generated: true,
+      transformer: idTransformer,
     },
     name: {
       type: String,
@@ -23,6 +25,7 @@ export const UserSchema = new EntitySchema<User>({
       cascade: true,
       target: 'Address',
       inverseSide: 'user',
+      
     }
   }
 })

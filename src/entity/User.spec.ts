@@ -3,6 +3,7 @@ import { Address } from "./Address";
 import { AddressSchema } from "./Address.schema";
 import { User } from "./User";
 import { UserSchema } from "./User.schema";
+import { Id } from "./id.value-object";
 
 describe('User', () => {
 
@@ -27,8 +28,6 @@ describe('User', () => {
     anAddress.city = 'New York';
     anAddress.user = user;
     anAddress.userId = user.id;
-
-
    
     user.addresses = [anAddress];
 

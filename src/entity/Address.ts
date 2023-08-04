@@ -1,8 +1,9 @@
 import type { User } from "./User"
+import { Id } from "./id.value-object"
 
 export class Address {
-    id: number
+    id: Id
     city: string
-    userId: number
+    userId: Id
     user: User
 }

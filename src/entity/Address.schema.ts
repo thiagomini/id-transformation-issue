@@ -1,5 +1,6 @@
 import { EntitySchema } from "typeorm";
 import { Address } from "./Address";
+import { idTransformer } from "./id.transformer";
 
 export const AddressSchema = new EntitySchema<Address>({
   name: 'Address',
@@ -10,6 +11,7 @@ export const AddressSchema = new EntitySchema<Address>({
       type: Number,
       primary: true,
       generated: true,
+      transformer: idTransformer,
     },
     city: {
       type: String,
@@ -18,6 +20,7 @@ export const AddressSchema = new EntitySchema<Address>({
     userId: {
       type: Number,
       nullable: false,
+      transformer: idTransformer,
     }
   },
   relations: {
