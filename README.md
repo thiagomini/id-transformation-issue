@@ -11,19 +11,15 @@ Steps to run this project:
 
 ```mermaid
 graph LR
-  A(User Object)
+  A(User)
   B(User Repository)
-  C(Address Object)
+  C(Address)
+  D(Typeorm)
   E["QueryFailedError: invalid input syntax for type integer: value:18"]
-  I[Save User Entity]
-  J[Save Address Entity]
-  K[Typeorm]
-  A -- "Define new" --> C
-  A -- "Add Address" --> C
-  B -- "Create Repository" --> A
-  I --> B
-  J --> K
-  K -- "Cascade save operation" --> E
+  A -- "Has Many" --> C
+  C -- "Belongs To One" --> A
+  D -- "Save" --> B
+  B -- "Cascade save operation" --> E
 ```
 
 
